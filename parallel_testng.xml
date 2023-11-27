@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="parallel Testing Suite" parallel="tests">
+	<listeners>
+		<listener class-name="com.demowebshop.listeners.TestListener" />
+	</listeners>
+	<test thread-count="5" name="chromeTest">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.demowebshop.testscript.HomeTest" >
+			<methods>
+				<include name="tc_001_verifyHomepageTitle" />
+				<include name="tc_002_verifySubscribeEmailMessage" />
+			</methods>
+			</class>
+		</classes>
+	
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
